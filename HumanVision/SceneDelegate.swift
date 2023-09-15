@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  HumanVision
 //
-//  Created by Emery Hollingsworth on 9/14/23.
+//  Created by Tony Loehr on 9/14/23.
 //
 
 import UIKit
