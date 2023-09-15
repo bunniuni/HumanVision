@@ -2,35 +2,69 @@
 //  HumanVisionTests.swift
 //  HumanVisionTests
 //
-//  Created by Emery Hollingsworth on 9/14/23.
+//  Created by Tony Loehr on 9/14/23.
 //
 
 import XCTest
 @testable import HumanVision
 
-final class HumanVisionTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+final class ViewControllerTests: XCTestCase {
+    
+    var viewController: ViewController!
+    
+    override func setUp() {
+        super.setUp()
+        viewController = ViewController()
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    override func tearDown() {
+        viewController = nil
+        super.tearDown()
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func testBoundingBoxIsCloseTo() {
+        // Given
+        let box1 = CGRect(x: 0.1, y: 0.1, width: 0.5, height: 0.5)
+        let box2 = CGRect(x: 0.15, y: 0.15, width: 0.55, height: 0.55)  // within the 0.1 tolerance
+        
+        // When
+        let isClose = viewController.isBoundingBox(box1, closeTo: box2)
+        
+        // Then
+        XCTAssertTrue(isClose, "Expected bounding boxes to be considered close.")
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testBoundingBoxIsNotCloseTo() {
+        // Given
+        let box1 = CGRect(x: 0.1, y: 0.1, width: 0.5, height: 0.5)
+        let box2 = CGRect(x: 0.3, y: 0.3, width: 0.8, height: 0.8)  // outside the 0.1 tolerance
+        
+        // When
+        let isClose = viewController.isBoundingBox(box1, closeTo: box2)
+        
+        // Then
+        XCTAssertFalse(isClose, "Expected bounding boxes to not be considered close.")
     }
-
+    
+    func testBoundingBoxIsCentered() {
+        // Given
+        let centeredBox = CGRect(x: 0.45, y: 0.45, width: 0.1, height: 0.1)
+        
+        // When
+        let isCentered = viewController.isCentered(boundingBox: centeredBox)
+        
+        // Then
+        XCTAssertTrue(isCentered, "Expected bounding box to be considered centered.")
+    }
+    
+    func testBoundingBoxIsNotCentered() {
+        // Given
+        let nonCenteredBox = CGRect(x: 0.8, y: 0.8, width: 0.1, height: 0.1)
+        
+        // When
+        let isCentered = viewController.isCentered(boundingBox: nonCenteredBox)
+        
+        // Then
+        XCTAssertFalse(isCentered, "Expected bounding box to not be considered centered.")
+    }
 }
