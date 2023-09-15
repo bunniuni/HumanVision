@@ -16,6 +16,8 @@
 		FF51C0DD2AB3D69F00F70507 /* HumanVisionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF51C0DC2AB3D69F00F70507 /* HumanVisionTests.swift */; };
 		FF51C0E72AB3D69F00F70507 /* HumanVisionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF51C0E62AB3D69F00F70507 /* HumanVisionUITests.swift */; };
 		FF51C0E92AB3D69F00F70507 /* HumanVisionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF51C0E82AB3D69F00F70507 /* HumanVisionUITestsLaunchTests.swift */; };
+		FF51C0F82AB3E66800F70507 /* YOLOv3TinyFP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = FF51C0F72AB3E66800F70507 /* YOLOv3TinyFP16.mlmodel */; };
+		FF51C0FA2AB3F11000F70507 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF51C0F92AB3F11000F70507 /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		FF51C0E22AB3D69F00F70507 /* HumanVisionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HumanVisionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF51C0E62AB3D69F00F70507 /* HumanVisionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanVisionUITests.swift; sourceTree = "<group>"; };
 		FF51C0E82AB3D69F00F70507 /* HumanVisionUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanVisionUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FF51C0F72AB3E66800F70507 /* YOLOv3TinyFP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = YOLOv3TinyFP16.mlmodel; sourceTree = "<group>"; };
+		FF51C0F92AB3F11000F70507 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +103,11 @@
 		FF51C0C42AB3D69E00F70507 /* HumanVision */ = {
 			isa = PBXGroup;
 			children = (
+				FF51C0F72AB3E66800F70507 /* YOLOv3TinyFP16.mlmodel */,
 				FF51C0C52AB3D69E00F70507 /* AppDelegate.swift */,
 				FF51C0C72AB3D69E00F70507 /* SceneDelegate.swift */,
 				FF51C0C92AB3D69E00F70507 /* ViewController.swift */,
+				FF51C0F92AB3F11000F70507 /* AppCoordinator.swift */,
 				FF51C0CB2AB3D69E00F70507 /* Main.storyboard */,
 				FF51C0CE2AB3D69F00F70507 /* Assets.xcassets */,
 				FF51C0D02AB3D69F00F70507 /* LaunchScreen.storyboard */,
@@ -260,7 +266,9 @@
 			files = (
 				FF51C0CA2AB3D69E00F70507 /* ViewController.swift in Sources */,
 				FF51C0C62AB3D69E00F70507 /* AppDelegate.swift in Sources */,
+				FF51C0FA2AB3F11000F70507 /* AppCoordinator.swift in Sources */,
 				FF51C0C82AB3D69E00F70507 /* SceneDelegate.swift in Sources */,
+				FF51C0F82AB3E66800F70507 /* YOLOv3TinyFP16.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
